@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section class="cards" style="grid-template-columns: 1fr;">
+  <article class="card">
+    <div class="upcont">
+      <h2>{{ page.title }}</h2>
+      <span>{{ page.date | date: "%d / %m / %y" }}</span>
+    </div>
+
+    {% if page.description %}
+      <p>{{ page.description }}</p>
+    {% endif %}
+    <div style="margin-top: 20px;">
+      {{ content }}
+    </br></br>
+    </div>
+  </article>
+</section>

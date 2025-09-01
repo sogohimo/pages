@@ -1,0 +1,25 @@
+---
+layout: default
+title: "{{ site.title }} — Главная"
+paginate: true
+---
+
+<section class="cards">
+  {% assign posts_list = paginator.posts | default: site.posts %}
+  {% for post in posts_list %}
+  <article class="card">
+    <h2><a href="{{ post.url | relative_url }}" style="text-decoration:none;color:inherit">{{ post.title }}</a></h2>
+    {% if post.description %}
+      <p>{{ post.description | strip_html | truncatewords: 60 }}</p>
+    {% elsif post.excerpt %}
+      <p>{{ post.excerpt }}</p>
+    {% else %}
+      <p></p>
+    {% endif %}
+    <div class="meta">
+      <span>{{ post.date | date: "%d / %m / %y" }}</span>
+      <a class="read-more" href="{{ post.url | relative_url }}">Читать дальше...</a>
+    </div>
+  </article>
+  {% endfor %}
+</section>

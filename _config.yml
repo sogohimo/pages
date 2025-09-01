@@ -1,0 +1,17 @@
+title: "SogoHimo"
+description: "Блог SogoHimo ни о чем"
+url: "https://sogohimo.github.io"
+permalink: /:title/
+timezone: Asia/Yekaterinburg
+markdown: kramdown
+
+paginate: 3
+paginate_path: "/page:num/"
+
+collections:
+  posts:
+    output: true
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sass-converter

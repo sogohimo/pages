@@ -1,0 +1,33 @@
+<footer class="footer grid-footer">
+  <div class="socials">
+    <a href="https://t.me/sogo_himo" target="_blank" rel="noopener">telegram</a> • 
+    <a href="https://instagram.com/sogox" target="_blank" rel="noopener">instagram</a>
+  </div>
+  <div class="pagination">
+    {% if paginator and paginator.total_pages > 1 %}
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}">&laquo;</a>
+      {% endif %}
+
+      {% assign start = 1 %}
+      {% assign end = paginator.total_pages %}
+
+      {% for page_num in (start..end) %}
+        {% if page_num == paginator.page %}
+          <strong>{{ page_num }}</strong>
+        {% elsif page_num == 1 %}
+          <a href="{{ '/' | relative_url }}">{{ page_num }}</a>
+        {% else %}
+          <a href="{{ '/page' | append:page_num | append:'/' | relative_url }}">{{ page_num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}">&raquo;</a>
+      {% endif %}
+    {% else %}
+      1
+    {% endif %}
+  </div>
+  <div class="credits">Design by Sogo</div>
+</footer>
