@@ -113,55 +113,8 @@ body{
   .card p{-webkit-line-clamp:6}
 }
 
-/* =========================
-   Happy React — emoji-реакции
-   ========================= */
-.hr-host{
-  width:100%;
-  display:grid;
-  /* равномерно растягиваем «стикеры» по всей ширине контейнера */
-  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
-  gap: clamp(8px, 1.5vw, 16px);
-  align-items:center;
-  justify-items:center;
-  margin-top: clamp(12px, 2vh, 24px);
 
-  /* размер эмодзи (масштаб реакций) */
-  font-size: clamp(28px, 4vw, 44px);
-  line-height:1;
-}
 
-@media (max-width:700px){
-  .hr-host{
-    grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
-  }
-}
-@media (max-width:420px){
-  .hr-host{
-    grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
-  }
-}
 
-.hr-host button,
-.hr-host [role="button"]{
-  padding: clamp(6px, 1vw, 10px) clamp(8px, 1.2vw, 12px);
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: #fff;
-  cursor: pointer;
-  transition: transform .12s ease;
-  touch-action: manipulation;
-}
 
-.hr-host button:hover,
-.hr-host [role="button"]:hover{ transform: translateY(-1px); }
-.hr-host button:active,
-.hr-host [role="button"]:active{ transform: translateY(0); }
 
-.hr-host button span,
-.hr-host [role="button"] span{
-  font-size: clamp(12px, 1.2vw, 14px);
-  vertical-align: middle;
-  opacity: .9;
-  margin-left: .35em;
-}
